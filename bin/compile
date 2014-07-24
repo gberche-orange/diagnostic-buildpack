@@ -3,5 +3,3 @@
 # bin/compile <build-dir> <cache-dir> <env-dir>
 
 echo "It should failed"
-echo "Failure !!!!" > 2
-exit 1
