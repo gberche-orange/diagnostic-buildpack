@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo "It should failed"
 echo "Failure !!!!" > 2
 exit 1
