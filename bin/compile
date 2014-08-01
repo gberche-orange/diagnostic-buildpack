@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# bin/compile <build-dir> <cache-dir> <env-dir>
+
+
+echo "Compile echoing on stdout"
+date
+echo "Compile echoing on stderr" 1>&2
+date
+
+sleep 1 # give loggregator time to start streaming the logs
+
+echo "Compile echoing on stdout after waiting 1s, before sleeping 10s"
+
+sleep 10
