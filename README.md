@@ -8,7 +8,7 @@ In particular it produces output logs on stdout and stderr to help in diagnostin
 Usage and sample output:
 
 ```
- $cf push diag-buildpack -p ./bin -b https://github.com/gberche-orange/diagnostic-buildpack.git
+ $cf push diag-buildpack -p ./anyFile.txt -b https://github.com/gberche-orange/diagnostic-buildpack.git
 
  Updating app diag-buildpack in org myorg / space development as me@me.org...
  OK
@@ -83,3 +83,10 @@ $ cf logs diag-buildpack --recent
 2014-08-01T15:48:35.50+0200 [App/0]   OUT X-Vcap-Request-Id: 0125b780-f752-40f6-401f-7baffd24c061
 2014-08-01T15:48:35.50+0200 [App/0]   OUT Accept-Encoding: gzip
 ```
+
+You may define the `FAIL` env to trigger a staging failure
+```
+ $ cf push diag-buildpack -p ./anyFile.txt -b https://github.com/gberche-orange/diagnostic-buildpack.git --no-start
+ $ cf set-env diag-buildpack FAIL true
+ $ cf start diag-buildpack 
+```       
